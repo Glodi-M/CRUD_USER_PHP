@@ -30,7 +30,10 @@
                 ?>
                     <tr>
                         <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Téléphone</th>
                         <th>Email</th>
+                        <th>Adresse</th>
                         <th>Modifier</th>
                         <th>Supprimer</th>
                     </tr>
@@ -42,7 +45,10 @@
                 ?>
                     <tr>
                         <td><?php echo $row['username']; ?></td>
+                        <td><?php echo $row['firstname']; ?></td>
+                        <td><?php echo $row['telephone']; ?></td>
                         <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $row['adresse']; ?></td>
                         <td><a href="editUser.php?id=<?php echo $row['user_id']; ?>"><img src="../images/write.png" alt=""></a></td>
                         <td><a href="deleteUser.php?id=<?php echo $row['user_id']; ?>"><img src="../images/remove.png" alt=""></a></td>
                     </tr>

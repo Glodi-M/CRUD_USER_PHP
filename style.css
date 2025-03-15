@@ -37,7 +37,11 @@ body {
 }
 
 main {
-  width: 50%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  margin: 20px 0;
 }
 
 img {
@@ -72,9 +76,10 @@ table {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   border-collapse: collapse;
   width: 100%;
-  table-layout: fixed;
+  table-layout: auto;
   border-radius: 10px;
   overflow: hidden;
+
 }
 
 table a {
