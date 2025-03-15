@@ -43,16 +43,8 @@
                     <tr>
                         <td><?php echo $row['username']; ?></td>
                         <td><?php echo $row['email']; ?></td>
-                        <td class="image">
-                            <a href="modifyUser.php?id=<?php $row['user_id']; ?>"> <img src="../images/write.png" alt="Modifier">
-                            </a>
-
-                        </td>
-                        <td class="image">
-                            <a href="deleteUser.php?id=<?php $row['user_id']; ?>">
-                                <img src="../images/remove.png" alt="Supprimer">
-                            </a>
-                        </td>
+                        <td><a href="editUser.php?id=<?php echo $row['user_id']; ?>"><img src="../images/write.png" alt=""></a></td>
+                        <td><a href="deleteUser.php?id=<?php echo $row['user_id']; ?>"><img src="../images/remove.png" alt=""></a></td>
                     </tr>
             <?php
                     }
