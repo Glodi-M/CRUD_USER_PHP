@@ -13,7 +13,6 @@
     <main>
         <div class="link_container">
             <a class="link" href="addUser.php">Ajouter un utilisateur</a>
-
         </div>
 
         <table>

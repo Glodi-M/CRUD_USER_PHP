@@ -17,8 +17,11 @@
   color: #fff;
   border-radius: 6px;
   text-decoration: 0;
+  display: inline-block;
+}
 
-
+.link:hover {
+  background-color: #5A67D8;
 }
 
 h1 {
@@ -40,8 +43,7 @@ main {
   background-color: #fff;
   border-radius: 10px;
   padding: 40px;
-  width: 100%;
-  margin: 20px 0;
+  width: 90%;
 }
 
 img {
