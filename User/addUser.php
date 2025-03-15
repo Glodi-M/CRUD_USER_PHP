@@ -13,7 +13,7 @@ if (isset($_POST['send'])) {
         $adresse = $_POST['adresse'];
 
         include('../connect_ddb.php');
-        $sql = "INSERT INTO users (username,firstname,telephone,email,adresse) VALUES ('$username','$$firstname', '$$telephone','$email', '$adresse')";
+        $sql = "INSERT INTO users (username,firstname,telephone,email,adresse) VALUES ('$username','$firstname', '$telephone','$email', '$adresse')";
 
         if (mysqli_query($conn, $sql)) {
             header('Location: showUser.php');

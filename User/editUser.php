@@ -25,9 +25,12 @@
 
             <h1>Modifier un utilisateur</h1>
             <input type="text" name="username" value="<?= $row['username']; ?>" required>
+            <input type="text" name="firstname" value="<?= $row['firstname']; ?>" required>
+            <input type="text" name="telephone" value="<?= $row['telephone']; ?>" required>
             <input type="email" name="email" value="<?= $row['email']; ?>" required>
+            <input type="text" name="adresse" value="<?= $row['adresse']; ?>" required>
             <input type="submit" value="Modifier" name="send">
-            <a class="link back" href="showUser.html">Annuler</a>
+            <a class="link back" href="showUser.php">Annuler</a>
         </form>
 
     <?php
@@ -36,13 +39,17 @@
     if (isset($_POST['send'])) {
 
         if (
-            isset($_POST["username"]) && isset($_POST['email'])
-            && !empty($_POST['username']) && !empty($_POST['email'])
+            isset($_POST["username"]) && isset($_POST['email']) && isset($_POST['firstname']) && isset($_POST['telephone']) && isset($_POST['adresse'])
+            && !empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['firstname']) && !empty($_POST['telephone']) && !empty($_POST['adresse'])
         ) {
             $username = $_POST["username"];
+            $firstname = $_POST['firstname'];
+            $telephone = $_POST['telephone'];
             $email = $_POST['email'];
+            $adresse = $_POST['adresse'];
 
-            $sql = "UPDATE users SET username = '$username', email = '$email' WHERE user_id = " . $_GET['id'];
+
+            $sql = "UPDATE users SET username = '$username', firstname='$firstname', telephone = '$telephone', email = '$email', adresse = '$adresse' WHERE user_id = " . $_GET['id'];
 
             if (mysqli_query($conn, $sql)) {
                 header('Location: showUser.php');
