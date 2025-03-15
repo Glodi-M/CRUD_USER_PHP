@@ -12,7 +12,7 @@
 
     <main>
         <div class="link_container">
-            <a href="addUser.php">Ajouter un utilisateur</a>
+            <a class="link" href="addUser.php">Ajouter un utilisateur</a>
 
         </div>
 
