@@ -1,11 +1,11 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$database = "crud-user";
+$db_host = "localhost";
+$db_user = "root";
+$db_password = "";
+$db_name = "crud-user";
 
 // Create connection
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = mysqli_connect($db_host, $db_user, $db_password, $db_name);
 
 // Check connection
 if (!$conn) {
