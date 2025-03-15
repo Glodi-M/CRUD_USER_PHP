@@ -144,7 +144,28 @@ form input[type="submit"] {
   margin-top: 8px;
 }
 
+/* Style pour la notification */
 
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  z-index: 1000;
+  display: none;
+}
+
+.success {
+  background-color: #4CAF50;
+  /* Vert */
+}
+
+.error {
+  background-color: #f44336;
+  /* Rouge */
+}
 
 @media screen and (max-width: 600px) {
 

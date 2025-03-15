@@ -1,10 +1,22 @@
+<?php
+session_start();
+// Récupérer le message de succès ou d'erreur
+$success_message = $_SESSION['success'] ?? null;
+$error_message = $_SESSION['error'] ?? null;
+
+// Supprimer les messages de la session après les avoir récupérés
+unset($_SESSION['success']);
+unset($_SESSION['error']);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestion utilisateur</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -61,6 +73,34 @@
         </table>
 
     </main>
+
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script>
+        // Afficher la notification
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = `notification ${type}`;
+            notification.style.display = 'block';
+
+            // Masquer la notification après 5 secondes
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 5000);
+        }
+
+        // Afficher le message de succès ou d'erreur
+        <?php if ($success_message) : ?>
+            showNotification("<?php echo $success_message; ?>", "success");
+        <?php endif; ?>
+
+        <?php if ($error_message) : ?>
+            showNotification("<?php echo $error_message; ?>", "error");
+        <?php endif; ?>
+    </script>
 
 </body>
 

@@ -12,6 +12,7 @@
 
 
     <?php
+    session_start();
 
     include('../connect_ddb.php');
 
@@ -52,10 +53,11 @@
             $sql = "UPDATE users SET username = '$username', firstname='$firstname', telephone = '$telephone', email = '$email', adresse = '$adresse' WHERE user_id = " . $_GET['id'];
 
             if (mysqli_query($conn, $sql)) {
+                $_SESSION['success'] = "Utilisateur modifié avec succès.";
                 header('Location: showUser.php');
                 exit();
             } else {
-                echo "Erreur: " . $sql . "<br>" . mysqli_error($conn);
+                $_SESSION['error'] = "Erreur lors de la modification de l'utilisateur.";
             }
         } else {
             echo "Veuillez remplir tous les champs";

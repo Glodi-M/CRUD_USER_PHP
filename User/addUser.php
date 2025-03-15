@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 if (isset($_POST['send'])) {
 
@@ -16,10 +17,11 @@ if (isset($_POST['send'])) {
         $sql = "INSERT INTO users (username,firstname,telephone,email,adresse) VALUES ('$username','$firstname', '$telephone','$email', '$adresse')";
 
         if (mysqli_query($conn, $sql)) {
+            $_SESSION['success'] = "Utilisateur ajouté avec succès.";
             header('Location: showUser.php');
             exit();
         } else {
-            echo "Erreur: " . $sql . "<br>" . mysqli_error($conn);
+            $_SESSION['error'] = "Erreur lors de l'ajout de l'utilisateur.";
         }
     } else {
         echo "Veuillez remplir tous les champs";
